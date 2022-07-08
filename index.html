@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Sachpra_Cakes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #ffd8ce;
+    background-image: url("banner.png");
+    color: #fff;
+    padding: 57px -124px 0px -14px;
+    height: 371px;
+    font-family: Montserrat, sans-serif;
+  }
+  .jumbotron{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: -3px;
+    color: inherit;
+    background-color: #eee;
+}
+  
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+    
+  }
+  .logo-small {
+    color: #601b27;
+    font-size: 50px;
+  }
+  .logo {
+    color: #601b27;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #601b27;
+  }
+  .carousel-indicators li {
+    color: #601b27;
+  }
+  .carousel-indicators li.active {
+    color: #601b27;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #601b27;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #b36161 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.glyphicon-star {
+  color: #e7711b;
+    font-size: 12px;
+}
+ .glyphicon-star.half {
+	 position: relative;
+}
+ .glyphicon-star.half:before {
+	 position: relative;
+	 z-index: 9;
+	 width: 49%;
+	 display: block;
+	 overflow: hidden;
+}
+ .glyphicon-star.half:after {
+	 content: '\e006';
+	 position: absolute;
+	 z-index: 8;
+	 color: #bdc3c7;
+	 top: 0;
+	 left: 0;
+}
+ .glyphicon-star.full {
+	 position: relative;
+}
+ .glyphicon-star.full:before {
+	 position: relative;
+	 z-index: 9;
+	 width: 49%;
+	 display: block;
+	 overflow: hidden;
+}
+ .glyphicon-star.full:after {
+	 content: '\e006';
+	 position: absolute;
+	 z-index: 10;
+	 color: #bdc3c7;
+	 top: 0;
+	 left: 0;
+}
+@media screen and (max-width: 600px) {
+  .logo-img{
+    position: fixed;
+    margin-top: 23px;
+  }
+  #logo-name{
+    margin-left: 42px;
+    margin-top: 23px;
+    font-size: 17px;
+  }
+  .ser-img{
+    margin-left: -56px;
+  }
+  .ser-img-2{
+    margin-left: -31px;
+  }
+
+  .ser-img-3{
+    margin-left: -1px;
+  }
+}
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<div class="full-main">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right:-3px;">
+        <span class="icon-bar" style=" width: 56px;
+        height: 7px;
+        margin: 10px;
+        margin-left: -34px;"></span>
+        <span class="icon-bar" style="    width: 56px;
+        height: 7px;
+        margin: 10px;
+        margin-left: -34px;"></span>
+        <span class="icon-bar" style="    width: 56px;
+        height: 7px;
+        margin: 10px;
+        margin-left: -34px;"></span>                        
+      </button>
+      <span class="logo-img"><img src="logo.png" alt="" width="51px;"></span>
+      <a class="navbar-brand" href="#myPage" id="logo-name">Sachpra_Cakes</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#cakes">CAKES</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1 style="color: #23233e;
+    margin-top: 54px;
+    font-family: cursive;
+    font-weight: 700;
+    letter-spacing: 9px;">Sachpra_ Cakes_<br>N_Delights</h1> 
+    <h2 style="    color: #23233e;
+    font-family: inherit;
+    font-weight: 700;
+    margin-top: 31px;
+    letter-spacing: 9px;">A bite of Delightness !</h2>
+    <h3 style=" color: #23233e;
+    font-family: 'Lato';
+    letter-spacing: 3px;
+    font-weight: 600;">Get Freshly baked Cakes in your hand</h3>
+  </div>
+</body>
+
+<div id="cakes" class="container-fluid text-center bg-grey">
+   <h2>
+     <img src="sk-main.jpg" alt="" style=" height: 100px;">    Cakes Available 
+     <img src="sk-main.jpg" alt="" style=" height: 100px;" >
+    </h2>
+    <br> 
+  <h4>What we have created</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="cake-1 (1).jpg" alt="Paris" width="400" height="300">
+        <h1>Rasmalai  Cake</h1>
+        <div class="price" style=" text-align:center;font-size:18px; color:#333;/*color:#ec018c;/*color:#222;*/">
+          <span style="font-size:15px;" class="moneySymbol">₹</span> <span data-inr="499" class="moneyCal">499</span>
+                  <span style="text-decoration:line-through; font-size:16px; padding-left: 3px; color:#878787;">
+                  <span class="moneySymbol">₹</span>
+                  <span data-inr="499" class="discountRate">599</span>
+              </span>
+              <span style="color:#DA0E68;font-weight: 700;font-size:12px;">
+                  
+                  (17% off)
+              </span>
+          </div>
+          <div class="center-align" style="height:22px;padding-top:4px;">
+            <div style="display:inline-block;color:#e7711b;font-size:12px;">
+              <span class="stars" data-rating="4.0">
+                <div class="rating">4.0
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star full"></i>99 Reviews
+                </div>
+                </div>
+            </div>
+            <div class="truncate" style="font-size:12px; color:#888; min-height:18px; text-align: center;">
+                                            
+              Earliest Delivery:
+              <span style="color: #66b266; font-weight: 700;">Today</span>
+              <br>
+              <button type="button" class="btn btn-danger">Add to Cart</button>
+              <button type="button" class="btn btn-danger">Add to Wish list</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="cake-1 (2).jpg" alt="New York" width="400" height="300">
+         <h1>Kit Kat Cake</h1>
+        <div class="price" style=" text-align:center;font-size:18px; color:#333;/*color:#ec018c;/*color:#222;*/">
+          <span style="font-size:15px;" class="moneySymbol">₹</span> <span data-inr="499" class="moneyCal">499</span>
+                  <span style="text-decoration:line-through; font-size:16px; padding-left: 3px; color:#878787;">
+                  <span class="moneySymbol">₹</span>
+                  <span data-inr="599" class="discountRate">699</span>
+              </span>
+              <span style="color:#DA0E68;font-weight: 700;font-size:12px;">
+                  
+                  (20% off)
+              </span>
+          </div>
+          <div class="center-align" style="height:22px;padding-top:4px;">
+            <div style="display:inline-block;color:#e7711b;font-size:12px;">
+              <span class="stars" data-rating="4.0">
+                <div class="rating">4.0
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star full"></i>99 Reviews
+                </div>
+                </div>
+            </div>
+            <div class="truncate" style="font-size:12px; color:#888; min-height:18px; text-align: center;">
+                                            
+              Earliest Delivery:
+              <span style="color: #66b266; font-weight: 700;">Today</span>
+              <br>
+              <button type="button" class="btn btn-danger">Add to Cart</button>
+              <button type="button" class="btn btn-danger">Add to Wish list</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="cake-7 (7).jpg " alt="Paris" width="400" height="300">
+        <h1>Red Velet Cake</h1>
+        <div class="price" style=" text-align:center;font-size:18px; color:#333;/*color:#ec018c;/*color:#222;*/">
+          <span style="font-size:15px;" class="moneySymbol">₹</span> <span data-inr="499" class="moneyCal">499</span>
+                  <span style="text-decoration:line-through; font-size:16px; padding-left: 3px; color:#878787;">
+                  <span class="moneySymbol">₹</span>
+                  <span data-inr="599" class="discountRate">499</span>
+              </span>
+              <span style="color:#DA0E68;font-weight: 700;font-size:12px;">
+                  
+                  (17% off)
+              </span>
+          </div>
+          <div class="center-align" style="height:22px;padding-top:4px;">
+            <div style="display:inline-block;color:#e7711b;font-size:12px;">
+              <span class="stars" data-rating="4.0">
+                <div class="rating">4.0
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star full"></i>99 Reviews
+                </div>
+                </div>
+            </div>
+            <div class="truncate" style="font-size:12px; color:#888; min-height:18px; text-align: center;">
+                                            
+              Earliest Delivery:
+              <span style="color: #66b266; font-weight: 700;">Today</span>
+              <br>
+              <button type="button" class="btn btn-danger">Add to Cart</button>
+              <button type="button" class="btn btn-danger">Add to Wish list</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="cake-1 (6).jpg" alt="New York" width="400" height="300">
+        <h1>Kit Kat <br> Cake</h1>
+        <div class="price" style=" text-align:center;font-size:18px; color:#333;/*color:#ec018c;/*color:#222;*/">
+          <span style="font-size:15px;" class="moneySymbol">₹</span> <span data-inr="499" class="moneyCal">499</span>
+                  <span style="text-decoration:line-through; font-size:16px; padding-left: 3px; color:#878787;">
+                  <span class="moneySymbol">₹</span>
+                  <span data-inr="599" class="discountRate">699</span>
+              </span>
+              <span style="color:#DA0E68;font-weight: 700;font-size:12px;">
+                  
+                  (10% off)
+              </span>
+          </div>
+          <div class="center-align" style="height:22px;padding-top:4px;">
+            <div style="display:inline-block;color:#e7711b;font-size:12px;">
+              <span class="stars" data-rating="4.0">
+                <div class="rating">4.0
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star full"></i>99 Reviews
+                </div>
+                </div>
+            </div>
+            <div class="truncate" style="font-size:12px; color:#888; min-height:18px; text-align: center;">
+                                            
+              Earliest Delivery:
+              <span style="color: #66b266; font-weight: 700;">Today</span>
+              <br>
+              <button type="button" class="btn btn-danger">Add to Cart</button>
+              <button type="button" class="btn btn-danger">Add to Wish list</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="cake-1 (5).jpg" alt="San Francisco" width="400" height="300">
+        <h1>Pub G Theme Cake</h1>
+        <div class="price" style=" text-align:center;font-size:18px; color:#333;/*color:#ec018c;/*color:#222;*/">
+          <span style="font-size:15px;" class="moneySymbol">₹</span> <span data-inr="499" class="moneyCal">499</span>
+                  <span style="text-decoration:line-through; font-size:16px; padding-left: 3px; color:#878787;">
+                  <span class="moneySymbol">₹</span>
+                  <span data-inr="899" class="discountRate">799</span>
+              </span>
+              <span style="color:#DA0E68;font-weight: 700;font-size:12px;">
+                  
+                  (17% off)
+              </span>
+          </div>
+          <div class="center-align" style="height:22px;padding-top:4px;">
+            <div style="display:inline-block;color:#e7711b;font-size:12px;">
+              <span class="stars" data-rating="4.0">
+                <div class="rating">4.0
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star full"></i>99 Reviews
+                </div>
+                </div>
+            </div>
+            <div class="truncate" style="font-size:12px; color:#888; min-height:18px; text-align: center;">
+                                            
+              Earliest Delivery:
+              <span style="color: #66b266; font-weight: 700;">Today</span>
+              <br>
+              <button type="button" class="btn btn-danger">Add to Cart</button>
+              <button type="button" class="btn btn-danger">Add to Wish list</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="ck.jpg" alt="Paris" width="400" height="300">
+        <h1>Dark Chocolate Cake</h1>
+        <div class="price" style=" text-align:center;font-size:18px; color:#333;/*color:#ec018c;/*color:#222;*/">
+          <span style="font-size:15px;" class="moneySymbol">₹</span> <span data-inr="499" class="moneyCal">499</span>
+                  <span style="text-decoration:line-through; font-size:16px; padding-left: 3px; color:#878787;">
+                  <span class="moneySymbol">₹</span>
+                  <span data-inr="599" class="discountRate">499</span>
+              </span>
+              <span style="color:#DA0E68;font-weight: 700;font-size:12px;">
+                  
+                  (10% off)
+              </span>
+          </div>
+          <div class="center-align" style="height:22px;padding-top:4px;">
+            <div style="display:inline-block;color:#e7711b;font-size:12px;">
+              <span class="stars" data-rating="4.0">
+                <div class="rating">4.0
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star"></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star "></i>
+                  <i class="glyphicon glyphicon-star full"></i>99 Reviews
+                </div>
+                </div>
+            </div>
+            <div class="truncate" style="font-size:12px; color:#888; min-height:18px; text-align: center;">
+                                            
+              Earliest Delivery:
+              <span style="color: #66b266; font-weight: 700;">Today</span>
+              <br>
+              <button type="button" class="btn btn-danger">Add to Cart</button>
+              <button type="button" class="btn btn-danger">Add to Wish list</button>
+        </div>
+      </div>
+    </div>
+  
+  </div><br>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <div class="col-sm-12">
+    
+      <h2> <img src="sk-main.jpg" class="ser-img" alt="" style="height: 100px;">SERVICES
+        <img src="sk-main.jpg" class="ser-img" style="height: 100px;"></h2><br>
+  
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-leaf logo-small" style="color: #1ebd0f;
+        font-size: 50px;"></span>
+        <h4>Fresh and Delicious <br>
+        100%  Vegetrain</h4>
+        <p>Get freshly baked Cakes</p>
+      </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"  style="color: #e20a0a;
+      font-size: 50px;"></span>
+      <h4>Trusted Brand</h4>
+      <p>loved brand by many customers</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>Shop Franchisee</h4>
+      <p>Become part of the Sachpra_Cakes family</p>
+    </div>
+  </div>
+</div>
+  <br><br>
+  <!-- <div class="col-sm-1"></div>
+    <div class="col-sm-4" style="margin-left: 53px;">
+      <span class="glyphicon glyphicon-wrench logo-small"  style="color: #601b27;
+      font-size: 50px;"></span>
+      <h4>Manufacturing <br> Franchisee</h4>
+      <p>Become part of the <br> Sachpra_Cakes family</p>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4" style="margin-left: -54px;">
+      <span class="glyphicon glyphicon-certificate logo-small" style="color: #2470b6;
+      font-size: 50px;"></span>
+      <h4>Certified</h4>
+      <p>Certified Brand</p>
+    </div> -->
+  </div>
+</div>
+
+  <!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="adt-img">
+        <h2> <img src="sk-main.jpg" alt="" class="ser-img-2" style="height: 100px;">ABOUT US
+        <img src="sk-main.jpg"  class="ser-img-2" style="height: 100px;"></h2><br>
+      </div>
+      <br>
+      <h4 class="abt-text" style="text-align: justify;">We are exactly what you are looking for. Yes, we are an FSSAI certified online cake and Bakery Company that specializes in delivering absolutely lip-smacking delicacies. Currently, we are delivering cakes in Gurgaon, Delhi, Noida, Ghaziabad, Bangalore and Hyderabad. We are not just a bakery, we are not just bakers. In fact, we are just like you, a bunch of food lovers fascinated with sweet indulgence, who 
+        dreamt of creating an appetizing fairy land of divine delicacies that relishes the utmost desires.</h4><br>
+      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+    </div>
+    <div class="col-sm-4">
+     <img src="sachpra-logo.PNG" alt="" width="100%">
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-12">
+<h2> <img src="sk-main.jpg" alt="" class="ser-img-3" style="height: 100px;">WHAT OUR CUSTOMERS SAYS
+  <img src="sk-main.jpg" alt="" class="ser-img-3" style="height: 100px;"></h2><br>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+       <h4>★★★★★Made My Day, Deluiciously tasty★★★★★</h4>
+      </div>
+      <div class="item">
+        <h4>★★★★★Presentation 10/10, Loved by everyone★★★★★</h4>
+      </div>
+      <div class="item">
+        <h4>★★★★★Every bite was perfectly balanced with cream Chocolate★★★★★</h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 30 min</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Serves in- Pune, Pimpri-Chinchwad</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Image of location/map -->
+<!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%"> -->
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Created By Innomise Pvt.Ltd<a href="https://innomise.com/" title="Visit w3schools"> <br> www.innomise.com</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
